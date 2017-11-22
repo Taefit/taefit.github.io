@@ -1,0 +1,108 @@
+/*Standards*/
+body{
+    font-family: "Zilla Slab", sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+a img{
+    border: none;
+}
+a{
+    color: #33CCFF;
+}
+a:visited{
+    color: black;
+}
+.invisible{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.titel{ /*Querformat*/
+    display: none;
+    height: 90vh;
+    position: fixed;
+    left: 3em;
+    top: 5vh;
+}
+.titel-h{ /*das ist für hochkant*/
+    width: 100vw;
+    display: block;
+}
+@media screen and (min-aspect-ratio: 3/2){
+    .titel{display: block;}
+    .titel-h{display: none;}
+}
+
+
+main{
+    color: white;
+    background-color: black;
+    padding-top: 5vh;
+
+    /*für Drehung unten*/
+    padding-bottom: 5vh;
+    margin-bottom: -5vh;
+}
+
+footer{
+    background: white;
+    color: black;
+}
+
+/*Flexbox-Zeug, um Bilder zu zentrieren und auf max 100% zu zeigen*/
+.flex{
+    width: 90vw;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+.flex-item{
+    text-align: center;
+    flex:0 0 100%;
+    max-height: 90vh;
+    margin-bottom: 10vh
+}
+.flex-item img{
+    max-width:100%;
+    height: 100%;
+}
+
+/*Rotation*/
+.rotiert{
+    transform: rotate(-1.8deg);
+
+    /*übertriebene Größe, um Rotation aufzufangen*/
+    width: 110vw;
+    margin-left: -5vw;
+    padding: 7.5vh 0 5vh;
+    margin-bottom: -5vh;
+}
+.rotiert >*{
+    /*Rotation invertieren ->wieder gerade*/
+    transform: rotate(1.8deg);
+}
+
+@media screen and (min-aspect-ratio: 3/2){/*im Querformat ist Rotation andersrum*/
+    .rotiert{transform: rotate(1.5deg)}
+    .rotiert >*{transform: rotate(-1.5deg)}
+}
+
+.text{
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 40em;
+    text-align: left;
+    position: relative;
+    display: block;
+}
