@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /blub/
+Disallow: /impressum.html
+
